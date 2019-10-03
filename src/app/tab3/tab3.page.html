@@ -30,7 +30,7 @@
       </ion-item>
       
   </ion-list>
-  <ion-slides pager class="slides">
+  <ion-slides pager class="slides" *ngIf="player">
 
       <ion-slide class="slide">
         <h5>{{player.team.division}}</h5>

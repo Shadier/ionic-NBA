@@ -11,11 +11,16 @@ import { AppComponent } from './app.component';
 import { ProviderService } from './provider.service';
 import { HttpClientModule } from '@angular/common/http';
 
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Brightness } from '@ionic-native/brightness/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [
+    Brightness,
+    Camera,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
