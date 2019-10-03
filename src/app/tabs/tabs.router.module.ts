@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-
 const routes: Routes = [
+  {
+    path: 'show-player/:id',
+    redirectTo: '/tabs/tab3/:id',
+    pathMatch: 'full'
+  },
   {
     path: 'tabs',
     component: TabsPage,
@@ -31,7 +35,7 @@ const routes: Routes = [
         path: 'tab3',
         children: [
           {
-            path: '',
+            path: ':id',
             loadChildren: () =>
               import('../tab3/tab3.module').then(m => m.Tab3PageModule)
           }

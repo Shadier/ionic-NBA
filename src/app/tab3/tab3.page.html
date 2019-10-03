@@ -1,9 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
+  <ion-toolbar color="dark">
+    <ion-title *ngIf="player">
+        {{player.first_name}} {{player.last_name}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content >
+  <ion-button routerLink="" routerDirection="backward">
+    GO BACK
+  </ion-button>
+  <ion-list inner *ngIf="player">
+      <ion-item class="item">
+          <h4>PLAYER DATA</h4>
+      </ion-item>
+      <ion-item class="item">
+          <ion-label><b>Position:</b> {{player.position}}</ion-label>
+      </ion-item>
+      <ion-item class="item">
+          <h4>TEAM DATA</h4>
+      </ion-item>
+      <ion-item class="item">
+          <ion-label><b>Name:</b> {{player.team.full_name}}</ion-label>
+      </ion-item>
+      <ion-item class="item">
+          <ion-label><b>City:</b> {{player.team.city}}</ion-label>
+      </ion-item>
+      <ion-item class="item">
+          <ion-label><b>Conference:</b> {{player.team.conference}}</ion-label>
+      </ion-item>
+      
+  </ion-list>
+  <ion-slides pager class="slides">
 
-<ion-content></ion-content>
+      <ion-slide class="slide">
+        <h5>{{player.team.division}}</h5>
+      </ion-slide>
+    
+      <ion-slide class="slide">
+        <h5>{{player.team.abbreviation}}</h5>
+      </ion-slide>
+    
+      <ion-slide class="slide">
+        <h5>{{player.team.name}}</h5>
+      </ion-slide>
+    
+    </ion-slides>
+</ion-content>

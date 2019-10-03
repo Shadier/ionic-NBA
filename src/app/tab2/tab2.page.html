@@ -1,9 +1,17 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      Tab Two
+      Configurarion Phone
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-item>
+        <ion-icon range-left style="font-size: 20px;" name="sunny"></ion-icon>
+        <ion-range [(ngModel)]="brightness">
+        </ion-range>
+        <ion-icon range-right name="sunny"></ion-icon>
+      </ion-item>
+
+</ion-content>
